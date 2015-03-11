@@ -1,10 +1,10 @@
 FROM dockerfile/java:oracle-java8
 MAINTAINER rmz@telenordigital.com
-RUN mkdir ~/servicedir
-ADD dropwizpoc/target/dropwizpoc-1.0-SNAPSHOT.jar ~/servicedir
-ADD dropwizpoc/example.yml  ~/servicedir 
-WORKDIR ~/servicedir
-
+RUN mkdir /servicedir
+ADD dropwizpoc-1.0-SNAPSHOT.jar /servicedir/dropwizpoc-1.0-SNAPSHOT.jar
+ADD example.yml  /servicedir/example.yml
+WORKDIR /servicedir
+RUN pwd
 RUN ls -la
 
 # Expose application server port
@@ -18,6 +18,6 @@ EXPOSE 8081
 ##
 
 
-RUN java -jar dropwizpoc-1.0-SNAPSHOT.jar server example.yml
+CMD java -jar dropwizpoc-1.0-SNAPSHOT.jar server example.yml
 
 
