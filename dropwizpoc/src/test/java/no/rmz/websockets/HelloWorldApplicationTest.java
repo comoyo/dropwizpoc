@@ -3,7 +3,10 @@ package no.rmz.websockets;
 import static junit.framework.Assert.assertEquals;
 
 import javax.ws.rs.*;
+
 import org.glassfish.jersey.server.*;
+import org.glassfish.jersey.test.*;
+
 import com.sun.jersey.test.framework.*;
 
 
@@ -28,6 +31,7 @@ public class HelloWorldApplicationTest extends JerseyTest {
         }
     }
 
+    @Override
     protected ResourceConfig configure() {
         return new ResourceConfig(HelloResource.class);
     }
