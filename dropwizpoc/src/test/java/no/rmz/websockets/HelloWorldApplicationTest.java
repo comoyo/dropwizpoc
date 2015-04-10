@@ -7,7 +7,6 @@ import javax.ws.rs.*;
 import org.glassfish.jersey.server.*;
 import org.glassfish.jersey.test.*;
 
-import com.sun.jersey.test.framework.*;
 
 
 /**
