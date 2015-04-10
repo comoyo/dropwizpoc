@@ -17,7 +17,7 @@ public class HelloWorldConfiguration extends Configuration {
     }
 
     @JsonProperty
-    public void setTemplate(String template) {
+    public void setTemplate(final String template) {
         this.template = template;
     }
 
@@ -27,7 +27,7 @@ public class HelloWorldConfiguration extends Configuration {
     }
 
     @JsonProperty
-    public void setDefaultName(String name) {
+    public void setDefaultName(final String name) {
         this.defaultName = name;
     }
 }
