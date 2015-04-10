@@ -5,6 +5,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import no.rmz.websockets.*;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
 
