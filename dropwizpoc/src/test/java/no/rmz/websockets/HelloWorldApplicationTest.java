@@ -2,7 +2,10 @@ package no.rmz.websockets;
 
 import static junit.framework.Assert.assertEquals;
 
+import no.rmz.dropwizpoc.*;
+
 import javax.ws.rs.*;
+import javax.ws.rs.core.*;
 
 import org.glassfish.jersey.server.*;
 import org.glassfish.jersey.test.*;
@@ -18,27 +21,19 @@ import org.junit.*;
  */
 public final class HelloWorldApplicationTest extends JerseyTest {
 
-    public HelloWorldApplicationTest() throws Exception {
-        super();
-    }
-
-    @Path("hello")
-    public  static class HelloResource {
-
-        @GET
-        public String getHello() {
-            return "Hello World!";
-        }
-    }
 
     @Override
     protected ResourceConfig configure() {
-        return new ResourceConfig(HelloResource.class);
+        return new ResourceConfig(HelloWorldApplication.class);
     }
 
     @Test
     public void test() {
-        final String hello = target("hello").request().get(String.class);
-        assertEquals("Hello World!", hello);
+        final Response response = target("hello-world").request().get();
+        // final String hello = target("hello-world").request().get(String.class);
+        assertEquals(200, response.getStatus());
+        assertEquals(MediaType.APPLICATION_JSON_TYPE, response.getMediaType());
+        final Object entity = response.getEntity();
+        assertEquals("Hello World!", entity);
     }
 }
