@@ -1,0 +1,14 @@
+
+o Get the maven coordinates for the jersey test thing to work.
+o Make basic tests for jersey interactions.
+o Make a simple integration test for a full jersery server
+  actually talking web sockets with a client written in java.
+o Bring up a webpage that can talk to the service.
+o Make a little chat service, you know because we can.
+o Check how we can do some kind of authentication, perhaps using
+  OpenID, perhaps something else. If nothing else works then
+  http simple authentication.
+o Think a little on how to so something similar to 
+  firebase: Write things in a database and share the
+  content of that database over a wire.
+
