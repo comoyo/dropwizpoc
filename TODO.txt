@@ -11,4 +11,7 @@ o Check how we can do some kind of authentication, perhaps using
 o Think a little on how to so something similar to 
   firebase: Write things in a database and share the
   content of that database over a wire.
-
+o Push it to amazon beanstalk and our openstack cluster.
+o Think about using this thing as an alternative to firebase
+  for the client we have, that would make the BH case
+  much simpler anyway.
