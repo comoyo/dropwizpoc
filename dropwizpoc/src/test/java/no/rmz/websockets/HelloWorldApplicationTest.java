@@ -6,6 +6,7 @@ import javax.ws.rs.*;
 
 import org.glassfish.jersey.server.*;
 import org.glassfish.jersey.test.*;
+import org.junit.*;
 
 
 
@@ -15,7 +16,7 @@ import org.glassfish.jersey.test.*;
  * once we're sure that the test harness
  * is actually doing its thing.
  */
-public class HelloWorldApplicationTest extends JerseyTest {
+public final class HelloWorldApplicationTest extends JerseyTest {
 
     public HelloWorldApplicationTest() throws Exception {
         super();
@@ -35,7 +36,7 @@ public class HelloWorldApplicationTest extends JerseyTest {
         return new ResourceConfig(HelloResource.class);
     }
 
-    // @Test
+    @Test
     public void test() {
         final String hello = target("hello").request().get(String.class);
         assertEquals("Hello World!", hello);
